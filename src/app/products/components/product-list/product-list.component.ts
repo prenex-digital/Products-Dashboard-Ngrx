@@ -7,9 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
 
+  public displayMode: number = 1;
+  public productsList: [] = [];
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onDisplayModeChange(mode: number): void {
+    this.displayMode = mode;
+  }
 }

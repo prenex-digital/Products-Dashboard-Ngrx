@@ -1,1 +1,18 @@
-<p>product-list works!</p>
+<section>
+    <div class="example-button-row">
+        <div class="example-flex-container">
+            <button mat-icon-button color="warn" aria-label="Grid view" (click)="onDisplayModeChange(1)">
+                <mat-icon>view_comfy</mat-icon>
+            </button>
+            <button mat-icon-button aria-label="List view" (click)="onDisplayModeChange(2)">
+                <mat-icon>view_list</mat-icon>
+            </button>
+        </div>
+    </div>
+    <div class="row" *ngIf="displayMode === 1;else list_content">
+        <!-- <app-grid-view *ngFor='let product of productsList' [product]="product"></app-grid-view> -->
+    </div>
+    <ng-template #list_content>
+        <!-- <app-list-view *ngFor='let product of productsList' [product]="product"></app-list-view> -->
+    </ng-template>
+</section>
