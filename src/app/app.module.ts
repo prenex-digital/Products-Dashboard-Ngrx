@@ -7,11 +7,19 @@ import { ProductsModule } from './products/products.module';
 import { AppMaterialModule } from './app-material.module';
 import { HomeComponent } from './home/home.component';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { LayoutComponent } from './layout/layout.component';
+import { HeaderComponent } from './navigation/header/header.component';
+import { FooterComponent } from './navigation/footer/footer.component';
+import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LayoutComponent,
+    HeaderComponent,
+    FooterComponent,
+    SidenavListComponent
   ],
   imports: [
     BrowserModule,

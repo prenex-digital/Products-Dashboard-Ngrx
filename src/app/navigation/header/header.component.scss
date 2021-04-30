@@ -1,0 +1,21 @@
+a {
+    text-decoration: none;
+    color: white;
+    margin-right: 10px;
+}
+ 
+a:hover, a:active{
+    color: lightgray;
+}
+
+ 
+mat-toolbar{
+    border-radius: 3px;
+    text-align: right;
+}
+ 
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
