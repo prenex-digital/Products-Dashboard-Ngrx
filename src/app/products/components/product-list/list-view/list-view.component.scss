@@ -1,0 +1,96 @@
+.list-view {
+ ul {
+     list-style: none;
+     padding: 0;
+     li {
+         a {
+            display: flex;
+            flex-wrap: nowrap;
+            .mat-card {
+                width: 100%;
+                margin-bottom: 10px;
+                flex-flow: row wrap;
+                .mat-card-image {
+                    max-width: 33%;
+                    flex: 1;
+                }
+                .mat-card-content {
+                    flex: 2;
+                }
+            }
+         }
+     }
+ }
+}
+
+
+.fLcKrH {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+.NICNP {
+    background-color: rgb(175, 223, 175);
+    border-radius: 2px;
+    display: inline-block;
+    margin: 0px 0px 1em;
+    width: 100%;
+    // max-width: 760px;
+}
+
+.hucKgc {
+    color: rgb(51, 51, 51);
+    display: block;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+// @media only screen and (min-width: 768px) {
+    .gjJFEL {
+        display: inline-block;
+        height: 250px;
+        width: 370px;
+        background-color: rgb(153, 153, 153);
+        background-image: url(https://raw.githubusercontent.com/geoffdavis92/weekly-ui-assets/master/results-page/day1/soccer-1.jpg);
+        background-position: center center;
+        background-size: cover;
+        border-radius: 2px;
+    
+        vertical-align: middle;
+    }
+// }
+
+.gCYijz {
+    display: inline-block;
+    padding: 0.5em 1em;
+    vertical-align: top;
+}
+
+.jMrOjd {
+    font-family: Merriweather, Georgia, serif;
+    font-size: 1em;
+    margin: 0px auto 1em;
+}
+
+.dilgOR {
+    font-family: Merriweather, Georgia, serif;
+    font-size: 1em;
+    margin: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 415px;
+}
+
+// @media only screen and (min-width: 768px)
+// {
+    .hMiEXT {
+        font-family: Merriweather, Georgia, serif;
+        font-size: 16px;
+        margin: 0px;
+        display: inline-block;
+        padding: 10px 10px 0px 0px;
+        text-align: left;
+        vertical-align: top;
+    }
+// }

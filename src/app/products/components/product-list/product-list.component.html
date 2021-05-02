@@ -1,18 +1,36 @@
-<section>
-    <div class="example-button-row">
-        <div class="example-flex-container">
-            <button mat-icon-button color="warn" aria-label="Grid view" (click)="onDisplayModeChange(1)">
-                <mat-icon>view_comfy</mat-icon>
-            </button>
-            <button mat-icon-button aria-label="List view" (click)="onDisplayModeChange(2)">
+<section class="product-panel">
+    <div class="header">
+        <h2 class="title">Products</h2>
+    </div>
+    <div class="sorter">
+        <mat-form-field appearance="fill">
+            <mat-label>Sort by</mat-label>
+            <mat-select>
+                <mat-option *ngFor="let sort of sortingList" [value]="sort.value">
+                    {{sort.viewValue}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="list">
+            <ng-template mat-tab-label>
                 <mat-icon>view_list</mat-icon>
-            </button>
-        </div>
+                <span>&nbsp;List</span>
+            </ng-template>
+            <app-list-view [products]='(products$ | async) || []'></app-list-view>
+        </mat-tab>
+
+        <mat-tab label="grid">
+            <ng-template mat-tab-label>
+                <mat-icon>view_comfy</mat-icon>
+                <span>&nbsp;Grid</span>
+            </ng-template>
+            <app-grid-view [products]='(products$ | async) || []'></app-grid-view>
+        </mat-tab>
+    </mat-tab-group>
+    <div class="spinner-container" *ngIf="loading">
+        <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
     </div>
-    <div class="row" *ngIf="displayMode === 1;else list_content">
-        <!-- <app-grid-view *ngFor='let product of productsList' [product]="product"></app-grid-view> -->
-    </div>
-    <ng-template #list_content>
-        <!-- <app-list-view *ngFor='let product of productsList' [product]="product"></app-list-view> -->
-    </ng-template>
+
 </section>

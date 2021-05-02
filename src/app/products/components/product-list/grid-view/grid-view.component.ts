@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/products/models/product';
 
 @Component({
   selector: 'app-grid-view',
@@ -7,6 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GridViewComponent implements OnInit {
 
+  @Input()
+  products: Product[] = [];
+  
   constructor() { }
 
   ngOnInit(): void {

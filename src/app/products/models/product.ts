@@ -1,9 +1,12 @@
 export interface Product {
-    id: number;
-    description: string;
-    iconUrl: string;
-    courseListIcon: string;
-    longDescription: string;
-    category: string;
-    lessonsCount: number;
+    isFav: boolean;
+    name: string;
+    oldPrice: string;
+    picture: string;
+    price: string;
+    rating: number;
+    savings: string;
+    size: string;
+    url: string;
+    _id: string;
 }

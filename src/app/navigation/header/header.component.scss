@@ -12,6 +12,22 @@ a:hover, a:active{
 mat-toolbar{
     border-radius: 3px;
     text-align: right;
+    .menu-item {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: flex-end;
+        margin: 0; 
+        width: 90%;
+        a {
+            text-decoration: none;
+            display: block;
+            padding: 1em;
+            color: white;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
 }
  
 @media(max-width: 959px){

@@ -1,1 +1,76 @@
-<p>list-view works!</p>
+<section class="list-view">
+  <ul>
+    <li *ngFor="let product of products">
+      <a>
+        <mat-card>
+          <img mat-card-image [src]="product.picture">
+          <mat-card-content>
+            <p>{{product.size}}</p>
+          </mat-card-content>
+        </mat-card>
+
+      </a>
+    </li>
+  </ul>
+
+  <!-- <ul class="sc-iyvyFf fLcKrH">
+    <li class="sc-hwwEjo NICNP"><a href="#!" class="sc-kPVwWT hucKgc">
+        <div class="sc-kfGgVZ gjJFEL"></div>
+        <article class="sc-esjQYD gCYijz">
+          <h3 class="sc-kIPQKe jMrOjd">Best MLS Fan Experiences&nbsp;<span
+              class="sc-eXEjpC cXchNP">-&nbsp;sponsored</span></h3>
+          <p class="sc-ibxdXY dilgOR">Sit pariatur mollit eu non magna nulla ullamco esse adipisicing non amet cupidatat
+            esse do nulla est consequat…</p>
+        </article>
+        <aside class="sc-RefOD hMiEXT">4/22/2018</aside>
+      </a></li>
+    <li class="sc-hwwEjo fEeknI"><a href="#!" class="sc-kPVwWT hucKgc">
+        <div class="sc-kfGgVZ bzEvaT"></div>
+        <article class="sc-esjQYD gCYijz">
+          <h3 class="sc-kIPQKe jMrOjd">Best MLS Fan Experiences</h3>
+          <p class="sc-ibxdXY dilgOR">Laboris officia exercitation commodo et sunt minim cillum labore culpa adipisicing
+            aliquip.</p>
+        </article>
+        <aside class="sc-RefOD hMiEXT">4/22/2018</aside>
+      </a></li>
+    <li class="sc-hwwEjo fEeknI"><a href="#!" class="sc-kPVwWT hucKgc">
+        <div class="sc-kfGgVZ dkKqOl"></div>
+        <article class="sc-esjQYD gCYijz">
+          <h3 class="sc-kIPQKe jMrOjd">Best MLS Fan Experiences</h3>
+          <p class="sc-ibxdXY dilgOR">Elit aliqua dolore dolor nisi elit excepteur tempor sunt id aliquip enim enim
+            officia esse cupidatat nostrud dolor labore…</p>
+        </article>
+        <aside class="sc-RefOD hMiEXT">4/22/2018</aside>
+      </a></li>
+    <li class="sc-hwwEjo fEeknI"><a href="#!" class="sc-kPVwWT hucKgc">
+        <div class="sc-kfGgVZ hdQlju"></div>
+        <article class="sc-esjQYD gCYijz">
+          <h3 class="sc-kIPQKe jMrOjd">Best MLS Fan Experiences</h3>
+          <p class="sc-ibxdXY dilgOR">Commodo labore culpa duis eiusmod ipsum minim non excepteur aute sint quis do
+            nulla irure voluptate…</p>
+        </article>
+        <aside class="sc-RefOD hMiEXT">4/22/2018</aside>
+      </a></li>
+  </ul> -->
+
+  <!-- <mat-card *ngFor="let product of products" class="course-card mat-elevation-z10">
+    <mat-card-header>
+      <mat-card-title>{{product.name}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="product.picture">
+    <mat-card-content>
+      <p>{{product.size}}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="course-actions">
+
+      <button mat-raised-button color="primary" [routerLink]="['/courses', product.url]">
+        VIEW
+      </button>
+
+   
+
+    </mat-card-actions>
+
+  </mat-card> -->
+</section>
