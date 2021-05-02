@@ -7,6 +7,7 @@ import { GridViewComponent } from './components/product-list/grid-view/grid-view
 import { ProductRoutingModule } from './products-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
+import { SharedModule } from './../shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RouterModule, Routes } from '@angular/router';
     AppMaterialModule,
     ProductRoutingModule,
     HttpClientModule,
-    RouterModule
+    RouterModule,
+    SharedModule
   ],
   exports: [
     ProductListComponent

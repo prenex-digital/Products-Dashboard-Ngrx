@@ -16,4 +16,8 @@ export class ListViewComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  selectedChange = (event: any) => {
+    console.log('Selected changed', event);
+  }
+
 }
