@@ -4,6 +4,7 @@
      padding: 0;
      li {
          a {
+             text-decoration: none;
             .mat-card {
                 width: 100%;
                 margin-bottom: 10px;
@@ -54,6 +55,9 @@
                         }
                     }
                 }
+            }
+            &:hover {
+                background-color: grey;
             }
          }
      }

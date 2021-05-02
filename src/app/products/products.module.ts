@@ -8,12 +8,14 @@ import { ProductRoutingModule } from './products-routing.module';
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule, Routes } from '@angular/router';
 import { SharedModule } from './../shared/shared.module';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ListViewComponent,
-    GridViewComponent
+    GridViewComponent,
+    ProductDetailComponent
   ],
   imports: [
     CommonModule,

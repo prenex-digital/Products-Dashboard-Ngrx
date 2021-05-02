@@ -1,7 +1,7 @@
 <section class="list-view">
   <ul>
     <li *ngFor="let product of products">
-      <a>
+      <a [routerLink]="['/'+ product.url]">
         <mat-card>
           <div class="product-image">
             <app-favourite-button [selected]='product.isFav' (selectedChange)='selectedChange($event)'>
