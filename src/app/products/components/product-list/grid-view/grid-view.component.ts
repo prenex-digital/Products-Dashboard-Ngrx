@@ -10,10 +10,19 @@ export class GridViewComponent implements OnInit {
 
   @Input()
   products: Product[] = [];
+
+  @Input()
+  sortBy: string;
+
+  @Input()
+  isDesc?: boolean = false;
   
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectedChange = (event: any) => {
+    console.log('Selected changed', event);
+  }
 }

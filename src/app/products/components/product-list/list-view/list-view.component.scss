@@ -1,65 +1,181 @@
 .list-view {
- ul {
-     list-style: none;
-     padding: 0;
-     li {
-         a {
-             text-decoration: none;
-            .mat-card {
-                width: 100%;
-                margin-bottom: 10px;
-                display: flex;
-                flex-wrap: nowrap;
-                padding: 0 16px 0 16px;
-                .product-image {
-                    position: relative;
-                    app-favourite-button {
-                        position: absolute;
-                        right: -5px;
-                        top: 10px;
-                    }
-                    .mat-card-image {
-                        flex: 1;
-                        margin-bottom: -5px;
-                    }
-                }
-                .mat-card-content {
-                    flex: 2;
-                    padding: 20px 30px;
-                    .contents {
+    // Mobile first 
+    ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 25px;
+        li {
+                max-width: 1000px;
+                .mat-card {
+                    width: 100%;
+                    margin-bottom: 10px;
+                    display: flex;
+                    flex-wrap: nowrap;
+                    padding: 0 16px 0 16px;
+                    .product-image {
                         position: relative;
-                        height: 100%;
-                        p {
-                            display: flex;
-                            align-items: center;
-                        }
-                        .price {
-                            display: flex;
+                        flex: 1;
+                        app-favourite-button {
                             position: absolute;
-                            bottom: 20px;
-                            div {
-                                margin-right: 15px;
-                            }
-                            .amount {
-                                font-size: 25px;
-                                font-weight: 500;
-                            }
-                            .old-price {
-                                color: #ccc;
-                                font-size: 15px;
-                            }
-                            .saving {
-                                color: palevioletred;
-                                font-size: 15px;
+                            right: -10px;
+                            top: 5px;
+                        }
+                        .mat-card-image {
+                            flex: 1;
+                            margin-bottom: -5px;
+                        }
+                    }
+
+                    .mat-card-content {
+                        flex: 2;
+                        padding: 20px 30px;
+                        .contents {
+                            a {
+                                text-decoration: none;
+                                height: 100%;
+                                color: #000;
+                                h2 {
+                                    font-size: 16px;
+                                    margin: -20px 0;
+                                    white-space: nowrap;
+                                    overflow: hidden;
+                                    text-overflow: ellipsis;
+                                }
+                                p {
+                                    display: flex;
+                                    align-items: center;
+                                    font-size: 12px;
+                                    margin-top: 15px;
+                                    app-star-ratings {
+                                        margin-left: 10px;
+                                        &::ng-deep .rating {
+                                            li {
+                                                .mat-icon {
+                                                    font-size: 15px;
+                                                    margin-right: 0;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                                .price {
+                                    display: flex;
+                                    position: absolute;
+                                    bottom: 5px;
+                                    div {
+                                        margin-right: 15px;
+                                    }
+                                    .amount {
+                                        font-size: 15px;
+                                        font-weight: 500;
+                                    }
+                                    .old-price {
+                                        color: #ccc;
+                                        font-size: 12px;
+                                    }
+                                    .saving {
+                                        color: palevioletred;
+                                        font-size: 12px;
+                                    }
+                                }
                             }
                         }
                     }
                 }
+        }
+    }
+    // 
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {  
+        ul {
+            li {
+                .mat-card {
+                    .mat-card-content {
+                        .contents{
+                            a {
+                                h2 {
+                                    font-size: 25px;
+                                    margin: -5px 0;
+                                }
+                                p {
+                                    font-size: 18px;
+                                    app-star-ratings{
+                                        &::ng-deep .rating {
+                                            li {
+                                                .mat-icon {
+                                                    font-size: 18px;
+                                                    margin-right: 2px;
+                                                }
+                                            } 
+                                        } 
+                                    } 
+                                }
+                                .price {
+                                    bottom: 20px;
+                                    .amount {
+                                        font-size: 25px;
+                                    }
+                                    .old-price {
+                                        font-size: 18px;
+                                    }
+                                    .saving {
+                                        font-size: 18px;
+                                    }
+                                }
+                            }
+                        } 
+                    }
+                }
             }
-            &:hover {
-                background-color: grey;
+        } 
+    }
+
+    /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+    @media (min-width: 768px) {  
+        ul {
+            li {
+                .mat-card {
+                    .product-image {
+                        app-favourite-button {
+                            &::ng-deep .favourite-button {
+                                width: 40px;
+                                height: 40px;
+                            }
+                        }
+                    }
+                    .mat-card-content {
+                        .contents{
+                            a {
+                                p {
+                                    font-size: 18px;
+                                    app-star-ratings{
+                                        right: -5px;
+                                        top: 10px;
+                                        &::ng-deep .rating {
+                                            li {
+                                                .mat-icon {
+                                                    font-size: 20px;
+                                                    margin-right: 2px;
+                                                }
+                                            } 
+                                        } 
+                                    } 
+                                }
+                            }
+                        } 
+                    }
+                }
             }
-         }
-     }
- }
+        } 
+    }
+    
+    /* Large devices (desktops, 992px and up) */
+    @media (min-width: 992px) { 
+    
+    }
+    
+    /* Extra large devices (large desktops, 1200px and up) */
+    @media (min-width: 1200px) {  
+        
+    }
 }

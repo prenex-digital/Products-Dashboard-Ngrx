@@ -5,7 +5,7 @@
     <div class="sorter">
         <mat-form-field appearance="fill">
             <mat-label>Sort by</mat-label>
-            <mat-select>
+            <mat-select (selectionChange)="onChange($event.value)">
                 <mat-option *ngFor="let sort of sortingList" [value]="sort.value">
                     {{sort.viewValue}}
                 </mat-option>
@@ -18,7 +18,7 @@
                 <mat-icon>view_list</mat-icon>
                 <span>&nbsp;List</span>
             </ng-template>
-            <app-list-view [products]='(products$ | async) || []'></app-list-view>
+            <app-list-view [products]='(products$ | async) || []' [sortBy]='sortBy' [isDesc]='isDesc'></app-list-view>
         </mat-tab>
 
         <mat-tab label="grid">
@@ -26,7 +26,7 @@
                 <mat-icon>view_comfy</mat-icon>
                 <span>&nbsp;Grid</span>
             </ng-template>
-            <app-grid-view [products]='(products$ | async) || []'></app-grid-view>
+            <app-grid-view [products]='(products$ | async) || []' [sortBy]='sortBy' [isDesc]='isDesc'></app-grid-view>
         </mat-tab>
     </mat-tab-group>
     <div class="spinner-container" *ngIf="loading">

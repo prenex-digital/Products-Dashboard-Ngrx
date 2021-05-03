@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { FavouriteButtonComponent } from './components/favourite-button/favourite-button.component';
 import { AppMaterialModule } from './../app-material.module';
 import { StarRatingsComponent } from './components/star-ratings/star-ratings.component';
+import { OrderByPipe } from './pipes/order-by.pipe';
 
 @NgModule({
   declarations: [
     FavouriteButtonComponent,
-    StarRatingsComponent
+    StarRatingsComponent,
+    OrderByPipe
   ],
   imports: [
     CommonModule,
@@ -15,7 +17,8 @@ import { StarRatingsComponent } from './components/star-ratings/star-ratings.com
   ],
   exports: [
     FavouriteButtonComponent,
-    StarRatingsComponent
+    StarRatingsComponent,
+    OrderByPipe
   ]
 })
 export class SharedModule { }

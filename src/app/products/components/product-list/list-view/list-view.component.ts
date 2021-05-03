@@ -11,6 +11,12 @@ export class ListViewComponent implements OnInit {
   @Input()
   products: Product[] = [];
 
+  @Input()
+  sortBy: string;
+
+  @Input()
+  isDesc?: boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {

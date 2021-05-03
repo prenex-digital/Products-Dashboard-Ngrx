@@ -1,3 +1,112 @@
-mat-grid-tile {
-    background: lightblue;
+.grid-view {
+  ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      li {
+             margin-right: 25px;
+             margin-top: 15px;
+             .mat-card {
+                 width: 370px;
+                 margin-bottom: 10px;
+                 display: flex;
+                 flex-wrap: nowrap;
+                 flex-direction: column;
+                 padding: 0;
+                 border-radius: 0;
+                 .product-image {
+                     position: relative;
+                     app-favourite-button {
+                         position: absolute;
+                         right: 10px;
+                         top: 10px;
+                     }
+                     .mat-card-image {
+                         flex: 1;
+                         margin-bottom: -5px;
+                         width: 370px;
+                         height: 250px;
+                         margin-left: 0;
+                     }
+                 }
+                 .mat-card-content {
+                     padding: 20px 30px;
+                     min-height: 130px;
+                     .contents {
+                         a {
+                             text-decoration: none;
+                             height: 100%;
+                             color: #000;
+                             p {
+                                 display: flex;
+                                 align-items: center;
+                             }
+                             .price {
+                                 display: flex;
+                                 position: absolute;
+                                 bottom: 30px;
+                                 div {
+                                     margin-right: 15px;
+                                 }
+                                 .amount {
+                                     font-size: 25px;
+                                     font-weight: 500;
+                                 }
+                                 .old-price {
+                                     color: #ccc;
+                                     font-size: 15px;
+                                 }
+                                 .saving {
+                                     color: palevioletred;
+                                     font-size: 15px;
+                                 }
+                             }
+                         }
+                     }
+                 }
+             }
+      }
   }
+  /* Small devices (landscape phones, 576px and up) */
+  @media (min-width: 576px) {  
+    ul {
+        li {
+            .mat-card {
+                .product-image {
+                    app-favourite-button {
+                        &::ng-deep .favourite-button {
+                            width: 40px;
+                            height: 40px;
+                        }
+                    }
+                }
+                .mat-card-content {
+                    .contents { 
+                        a {
+                            p {
+                                app-star-ratings {
+                                    &::ng-deep .rating {
+                                        li {
+                                            margin: 0;
+                                            .mat-icon {
+                                                margin-right: -12px;
+                                            }
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            } 
+        } 
+    }
+  }
+
+  /* Medium devices (tablets, 768px and up) The navbar toggle appears at this breakpoint */
+  @media (min-width: 768px) {   
+
+  }
+ }
+

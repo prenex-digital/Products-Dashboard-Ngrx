@@ -1,6 +1,34 @@
-<mat-grid-list cols="3" rowHeight="2:1">
-    <mat-grid-tile>1</mat-grid-tile>
-    <mat-grid-tile>2</mat-grid-tile>
-    <mat-grid-tile>3</mat-grid-tile>
-    <mat-grid-tile>4</mat-grid-tile>
-  </mat-grid-list>
+<section class="grid-view">
+  <ul>
+    <li *ngFor="let product of products | orderBy:sortBy: isDesc">
+      <mat-card>
+        <div class="product-image">
+          <app-favourite-button [selected]='product.isFav' (selectedChange)='selectedChange($event)'>
+          </app-favourite-button>
+          <img mat-card-image [src]="product.picture">
+        </div>
+        <mat-card-content>
+          <div class="contents">
+            <a [routerLink]="['/'+ product.url]">
+              <h2>{{product.name}}</h2>
+              <p>{{product.size}}
+                <app-star-ratings [stars]='product.rating'></app-star-ratings>
+              </p>
+              <div class="price">
+                <div class="amount">
+                  {{product.price}}
+                </div>
+                <div class="old-price" *ngIf='product.oldPrice'>
+                  <s>{{product.oldPrice}}</s>
+                </div>
+                <div class="saving" *ngIf='product.savings'>
+                  You save {{product.savings}}
+                </div>
+              </div>
+            </a>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </li>
+  </ul>
+</section>

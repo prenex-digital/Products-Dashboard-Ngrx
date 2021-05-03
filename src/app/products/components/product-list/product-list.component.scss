@@ -1,15 +1,13 @@
-.button-row {
-    display: flex;
-    flex-wrap: nowrap;
-}
+.product-panel {
+    position: relative;
+    .sorter {
+        display: flex;
+        flex: 1;
+        align-items: flex-end;
+        justify-content: flex-end;
+    }
 
-.spinner-container mat-spinner {
-    margin: 95px auto 0 auto;
-}
-
-.sorter {
-    display: flex;
-    flex: 1;
-    align-items: flex-end;
-    justify-content: flex-end;
+    .spinner-container mat-spinner {
+        margin: 95px auto 0 auto;
+    }
 }

@@ -1,15 +1,15 @@
 <section class="list-view">
   <ul>
-    <li *ngFor="let product of products">
-      <a [routerLink]="['/'+ product.url]">
-        <mat-card>
-          <div class="product-image">
-            <app-favourite-button [selected]='product.isFav' (selectedChange)='selectedChange($event)'>
-            </app-favourite-button>
-            <img mat-card-image [src]="product.picture">
-          </div>
-          <mat-card-content>
-            <div class="contents">
+    <li *ngFor="let product of products | orderBy:sortBy: isDesc">
+      <mat-card>
+        <div class="product-image">
+          <app-favourite-button [selected]='product.isFav' (selectedChange)='selectedChange($event)'>
+          </app-favourite-button>
+          <img mat-card-image [src]="product.picture">
+        </div>
+        <mat-card-content>
+          <div class="contents">
+            <a [routerLink]="['/'+ product.url]">
               <h2>{{product.name}}</h2>
               <p>{{product.size}}
                 <app-star-ratings [stars]='product.rating'></app-star-ratings>
@@ -25,10 +25,10 @@
                   You save {{product.savings}}
                 </div>
               </div>
-            </div>
-          </mat-card-content>
-        </mat-card>
-      </a>
+            </a>
+          </div>
+        </mat-card-content>
+      </mat-card>
     </li>
   </ul>
 </section>
