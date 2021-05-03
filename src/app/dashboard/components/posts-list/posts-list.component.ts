@@ -23,17 +23,14 @@ export class PostsListComponent implements OnInit {
         takeUntil(this.destroy$),
         shareReplay()
       )
-
-      this.posts$.subscribe((ss)=>{
-        console.log('JASDFJASJDFJASD', ss);
-      });
-
   }
 
   ngOnDestroy() {
     this.destroy$.next(undefined);
-    // Unsubscribe from the subject
     this.destroy$.unsubscribe();
   }
 
+  removePost = (post: Posts) => {
+
+  }
 }
