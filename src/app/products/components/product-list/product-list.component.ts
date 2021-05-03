@@ -4,6 +4,7 @@ import { map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
 import { sortingList, SortList, sortEntities } from './../../models/sorting-list';
+import { FilterList, FilteringList, filterList, filterEntities } from './../../models/filter-list';
 
 @Component({
   selector: 'app-product-list',
@@ -17,7 +18,9 @@ export class ProductListComponent implements OnInit {
   public products$: Observable<Product[]>;
   loading = true;
   public sortBy: string;
+  public filterBy: string;
   public sortingList = sortingList;
+  public filterList = filterList;
   destroy$: Subject<Product> = new Subject<Product>();
   public isDesc: boolean = false;
 
@@ -31,7 +34,7 @@ export class ProductListComponent implements OnInit {
     this.getProducts();
   }
 
-  onChange = (event: any) => {
+  onSort = (event: any) => {
     switch (event) {
       case SortList.NAME: // name
         this.sortBy = sortEntities.name;
@@ -46,7 +49,17 @@ export class ProductListComponent implements OnInit {
         this.isDesc = true;
         break;
     }
-    // this.ref.detectChanges();
+  }
+
+  onFilter = (event: any) => {
+    switch (event) {
+      case FilterList.PRICE: // price
+        this.filterBy = filterEntities.price;
+        break;
+      case FilterList.SIZE: // size
+        this.filterBy = filterEntities.size;
+        break;
+    }
   }
 
   ngOnDestroy() {

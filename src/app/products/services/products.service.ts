@@ -29,12 +29,4 @@ export class ProductsService {
         map((res: any) => res.payload)
       )
   }
-
-  // filterByCategory(category: string) {
-  //   return this.courses$
-  //     .pipe(
-  //       map(courses => courses
-  //         .filter(course => course.category == category))
-  //     );
-  // }
 }

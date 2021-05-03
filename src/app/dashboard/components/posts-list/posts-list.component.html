@@ -1,1 +1,14 @@
-<p>posts-list works!</p>
+<section class="posts">
+    <mat-card class="example-card" *ngFor="let posts of posts$ | async">
+        <mat-card-header>
+            <mat-card-title class="title">{{posts.title}}</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <p>
+                {{posts.body}}
+            </p>
+            <!-- <button mat-raised-button color="warn">Remove</button> -->
+            <button mat-stroked-button color="warn">Remove</button>
+        </mat-card-content>
+    </mat-card>
+</section>

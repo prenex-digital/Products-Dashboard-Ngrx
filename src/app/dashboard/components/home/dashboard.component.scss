@@ -1,0 +1,19 @@
+.dashboard-panel {
+    .spinner-container mat-spinner {
+        margin: 95px auto 0 auto;
+    }
+    &::ng-deep .mat-tab-label-content {
+        span {
+            display: none;
+        }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 576px) {   
+        &::ng-deep .mat-tab-label-content {
+            span {
+                display: block;
+            }
+        }
+    }
+}

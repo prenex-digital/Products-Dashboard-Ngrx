@@ -1,1 +1,35 @@
-<p>dashboard works!</p>
+<section class="dashboard-panel">
+    <div class="header">
+        <h2 class="title">Dashboard</h2>
+    </div>
+    <mat-tab-group>
+        <mat-tab label="posts" class="posts">
+            <ng-template mat-tab-label>
+                <mat-icon>article</mat-icon>
+                <span>&nbsp;Posts</span>
+            </ng-template>
+            <app-posts-list></app-posts-list>
+        </mat-tab>
+
+        <mat-tab label="photos" class="photos">
+            <ng-template mat-tab-label>
+                <mat-icon>image</mat-icon>
+                <span>&nbsp;Photos</span>
+            </ng-template>
+            <app-photos-list></app-photos-list>
+        </mat-tab>
+
+        <mat-tab label="removed" class="removed">
+            <ng-template mat-tab-label>
+                <mat-icon>delete</mat-icon>
+                <span>&nbsp;Removed Items</span>
+            </ng-template>
+            <app-removed-items></app-removed-items>
+        </mat-tab>
+
+    </mat-tab-group>
+    <div class="spinner-container" *ngIf="loading">
+        <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
+    </div>
+
+</section>

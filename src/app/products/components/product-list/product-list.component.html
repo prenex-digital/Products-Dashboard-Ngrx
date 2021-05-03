@@ -5,7 +5,7 @@
     <div class="sorter">
         <mat-form-field appearance="fill">
             <mat-label>Sort by</mat-label>
-            <mat-select (selectionChange)="onChange($event.value)">
+            <mat-select (selectionChange)="onSort($event.value)">
                 <mat-option *ngFor="let sort of sortingList" [value]="sort.value">
                     {{sort.viewValue}}
                 </mat-option>

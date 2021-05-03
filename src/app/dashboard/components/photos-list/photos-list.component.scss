@@ -1,0 +1,38 @@
+.photos {
+    margin-bottom: 5px;
+    padding: 20px;
+    .mat-card {
+        margin-bottom: 15px;
+        position: relative;
+        .mat-card-content {
+            max-width: 85%;
+            .buttons {
+                a {
+                    margin-right: 5px;
+                }
+            }
+        }
+        
+        &::ng-deep .mat-card-header-text {
+            margin: 0;
+        }
+
+        .mat-card-image {
+            max-width: 150px;
+            margin-left: 0px;
+        }
+    }
+
+    /* Small devices (landscape phones, 576px and up) */
+    @media (min-width: 768px) {    
+        .mat-card { 
+            .mat-card-content {
+                .buttons { 
+                    position: absolute;
+                    top: 100px;
+                    right: 80px;
+                }
+             }
+        }
+    }
+}

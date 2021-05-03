@@ -4,6 +4,8 @@ import { DashboardComponent } from './components/home/dashboard.component';
 import { PostsListComponent } from './components/posts-list/posts-list.component';
 import { PhotosListComponent } from './components/photos-list/photos-list.component';
 import { RemovedItemsComponent } from './components/removed-items/removed-items.component';
+import { AppMaterialModule } from './../app-material.module';
+import { DashboardRoutingModule } from './dashboard-routing.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,9 @@ import { RemovedItemsComponent } from './components/removed-items/removed-items.
     RemovedItemsComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppMaterialModule,
+    DashboardRoutingModule
   ]
 })
 export class DashboardModule { }
