@@ -14,8 +14,8 @@ export class DashboardService {
   constructor(private api: ApiService) { }
 
   getAllPosts = (): Observable<Posts[]> => {
-    const http$ = this.api.get(`${environment.api.url}posts`);
-
+    const http$ = this.api.get(`${environment.api.url}posts`);              /// to run on live server 
+    // const http$ = this.api.get(`/api/posts`);                            /// to run on local server
     return http$
       .pipe(
         tap(() => console.log('HTTP request executed')),
@@ -24,8 +24,8 @@ export class DashboardService {
   }
 
   getAllPhotos = (): Observable<Photos[]> => {
-    const http$ = this.api.get(`${environment.api.url}photos`);
-
+    const http$ = this.api.get(`${environment.api.url}photos`);   /// to run on live server 
+    // const http$ = this.api.get(`/api/photos`);                 /// to run on local server
     return http$
       .pipe(
         tap(() => console.log('HTTP request executed')),

@@ -3,11 +3,7 @@
     padding: 20px;
     .mat-card {
         margin-bottom: 15px;
-        position: relative;
-        .mat-card-content {
-            max-width: 85%;
-        }
-        
+        position: relative;    
         &::ng-deep .mat-card-header-text {
             margin: 0;
         }

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Store } from '@ngrx/store';
-import { Observable, pipe, Subject } from 'rxjs';
+import { Observable, of, pipe, Subject } from 'rxjs';
 import { map, shareReplay, takeUntil, tap } from 'rxjs/operators';
 import { AppState } from 'src/app/store/reducers';
 import { Posts } from '../../models/posts';
@@ -35,7 +35,20 @@ export class PostsListComponent implements OnInit {
     this.destroy$.unsubscribe();
   }
 
-  removePost = (post: Posts) => {
+  removePost = (post: Posts, posts: Posts[]) => {
     this.store.dispatch(storePosts({ posts: post }));
+    let filteredData: Posts[] = posts.filter(pos => pos.id !== post.id);
+    if(filteredData && filteredData.length>0) {
+      this.posts$ = of(filteredData);
+    }
   }
+
+//   updateOrder(id) {
+//     for(item in orderPreparing) {
+//         if(item[id] == id) {
+//             delete this.orderPreparing.item;
+//         }
+//     }
+// }
+
 }
