@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { PhotosListComponent } from './photos-list.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { StoreModule } from '@ngrx/store';
 
 describe('PhotosListComponent', () => {
   let component: PhotosListComponent;
@@ -8,7 +9,11 @@ describe('PhotosListComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ PhotosListComponent ]
+      declarations: [ PhotosListComponent ],
+      imports: [
+        HttpClientTestingModule,
+        StoreModule.forRoot({})
+      ]
     })
     .compileComponents();
   });

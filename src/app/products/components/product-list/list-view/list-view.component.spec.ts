@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ListViewComponent } from './list-view.component';
+import { OrderByPipe } from 'src/app/shared/pipes/order-by.pipe';
 
 describe('ListViewComponent', () => {
   let component: ListViewComponent;
@@ -8,9 +8,12 @@ describe('ListViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ListViewComponent ]
+      declarations: [
+        ListViewComponent,
+        OrderByPipe
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

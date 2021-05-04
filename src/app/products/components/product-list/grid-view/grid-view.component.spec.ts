@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { GridViewComponent } from './grid-view.component';
+import { OrderByPipe } from 'src/app/shared/pipes/order-by.pipe';
 
 describe('GridViewComponent', () => {
   let component: GridViewComponent;
@@ -8,9 +8,12 @@ describe('GridViewComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GridViewComponent ]
+      declarations: [
+        GridViewComponent,
+        OrderByPipe
+      ]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
