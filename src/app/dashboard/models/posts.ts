@@ -4,3 +4,10 @@ export interface Posts {
     title: string;
     body: string;
 }
+
+export const postsInit = {
+    userId: 0,
+    id: 0,
+    title: '',
+    body: ''
+}

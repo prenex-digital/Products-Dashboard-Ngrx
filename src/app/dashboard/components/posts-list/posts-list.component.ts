@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Store } from '@ngrx/store';
 import { Observable, pipe, Subject } from 'rxjs';
 import { map, shareReplay, takeUntil, tap } from 'rxjs/operators';
+import { AppState } from 'src/app/store/reducers';
 import { Posts } from '../../models/posts';
 import { DashboardService } from '../../services/dashboard.service';
+import { storePosts } from './../../../store/actions/posts.actions';
 
 @Component({
   selector: 'app-posts-list',
@@ -14,7 +17,9 @@ export class PostsListComponent implements OnInit {
   public posts$: Observable<Posts[]>;
   destroy$: Subject<Posts[]> = new Subject<Posts[]>();
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(
+    private dashboardService: DashboardService,
+    private store: Store<AppState>) { }
 
   ngOnInit(): void {
     this.posts$ = this.dashboardService.getAllPosts()
@@ -31,6 +36,6 @@ export class PostsListComponent implements OnInit {
   }
 
   removePost = (post: Posts) => {
-
+    this.store.dispatch(storePosts({ posts: post }));
   }
 }
