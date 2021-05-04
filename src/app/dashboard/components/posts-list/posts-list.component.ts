@@ -42,13 +42,4 @@ export class PostsListComponent implements OnInit {
       this.posts$ = of(filteredData);
     }
   }
-
-//   updateOrder(id) {
-//     for(item in orderPreparing) {
-//         if(item[id] == id) {
-//             delete this.orderPreparing.item;
-//         }
-//     }
-// }
-
 }

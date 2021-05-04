@@ -21,3 +21,17 @@
     }
 }
 
+.photos {
+    margin-bottom: 5px;
+    padding: 20px;
+    .mat-card {
+        margin-bottom: 15px;
+        &::ng-deep .mat-card-header-text {
+            margin: 0;
+        }
+        .mat-card-image {
+            max-width: 150px;
+            margin-left: 0px;
+        }
+    }
+}
