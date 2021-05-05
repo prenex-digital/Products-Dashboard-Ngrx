@@ -1,17 +1,26 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { RemovedItemsComponent } from './removed-items.component';
-import { StoreModule } from '@ngrx/store';
+import { provideMockStore } from '@ngrx/store/testing';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('RemovedItemsComponent', () => {
   let component: RemovedItemsComponent;
   let fixture: ComponentFixture<RemovedItemsComponent>;
 
   beforeEach(async () => {
+    const initialState: any = {
+      posts: [],
+      photos: []
+    }
+
     await TestBed.configureTestingModule({
-      declarations: [ RemovedItemsComponent ],
-      imports: [StoreModule.forRoot({})]
+      declarations: [RemovedItemsComponent],
+      providers: [
+        provideMockStore({ initialState })
+      ],
+      schemas: [NO_ERRORS_SCHEMA]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {
