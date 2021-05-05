@@ -29,6 +29,12 @@
             <app-grid-view [products]='(products$ | async) || []' [sortBy]='sortBy' [isDesc]='isDesc'></app-grid-view>
         </mat-tab>
     </mat-tab-group>
+    <div *ngIf='errorMsg'>
+        <h6>An Error Occured</h6>
+        <p>
+            {{errorMsg}}
+        </p>
+    </div>
     <div class="spinner-container" *ngIf="loading">
         <mat-spinner [style.display]="loading ? 'block' : 'none'"></mat-spinner>
     </div>
